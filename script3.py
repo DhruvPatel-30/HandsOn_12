@@ -12,7 +12,7 @@ cursor = conn.cursor()
 
 def fetch_large_data():
     print("Running slow query...")
-    cursor.execute("SELECT * FROM large_table ORDER BY RAND()")
+    cursor.execute("SELECT * FROM large_table ORDER BY id LIMIT 100")
     results = cursor.fetchall()
     print("Done.")
     return results
